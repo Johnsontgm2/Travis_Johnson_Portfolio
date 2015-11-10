@@ -6,33 +6,52 @@ Fantasy Football Calculator
 
 
 // alert("Testing");
+ alert("This calculator will determine player rank by points. The order of position tested is\n1.QB\n2.RB\n3.WR\n4.TE");
 
 // User prompts for player information
- var playerName=prompt("Please enter the player name.");
+ var QBplayerName=prompt("Please enter the QB player name.");
 // Validate prompt
- while(playerName===""){
-     playerName=prompt("Please do not leave blank.Please enter the player name.")
+ while(QBplayerName===""){
+     QBplayerName=prompt("Please do not leave blank.Please enter the QB player name.")
  }
- alert("This calculator will determine player rank by points. The order of position tested is\n1.QB\n2.RB\n3.WR\n4.TE");
+ var RBplayerName=prompt("Please enter the RB player name.");
+ while(RBplayerName===""){
+     RBplayerName=prompt("Please do not leave blank.Please enter the RB player name.")
+ }
+ var WRplayerName=prompt("Please enter the WR player name.");
+ while(WRplayerName===""){
+     WRplayerName=prompt("Please do not leave blank.Please enter the WR player name.")
+ }
+ var TEplayerName=prompt("Please enter the TE player name.");
+ while(TEplayerName===""){
+     TEplayerName=prompt("Please do not leave blank.Please enter the TE player name.")
+ }
  // Function calls for position selected with console log of points playerName and total.
  var readyToBegin=prompt("Are you ready to begin? Please enter yes or no.Remember QB is first");
  while(readyToBegin != "yes" && readyToBegin != "no"){
-     gutFeeling = prompt("Please do not leave blank and only enter yes or no")
+     readyToBegin = prompt("Please do not leave blank and only enter yes or no")
  }
  if(readyToBegin==="yes"){
+     alert("Now calculating QB " + QBplayerName + " points");
      var QBtotal=qbAsessment();
-     alert("Now calculating RB points");
+     console.log(QBplayerName + " points:"+ QBtotal );
+     alert("Now calculating RB " + RBplayerName + " points");
      var RBtotal=rbAssesment();
-     alert("Now calculating WR points");
+     console.log(RBplayerName + " points:"+ RBtotal);
+     alert("Now calculating WR " + WRplayerName + " points");
      var WRtotal=wrAssesment();
-     alert("Now calculating TE points");
-     var TEtotal=teAssesment()
+     console.log(WRplayerName+" points:" + WRtotal);
+     alert("Now calculating WR " + TEplayerName + " points");
+     var TEtotal=teAssesment();
+     console.log(TEplayerName+" points:" +TEtotal);
+
+
  }if(readyToBegin==="no"){
      readyToBegin=prompt("YOU SHOULD BE READY!");
  }
 
  var teamArray=[QBtotal,RBtotal,WRtotal,TEtotal];
- console.log(teamArray);
+
 
 // Function for TE
  function teAssesment(){
